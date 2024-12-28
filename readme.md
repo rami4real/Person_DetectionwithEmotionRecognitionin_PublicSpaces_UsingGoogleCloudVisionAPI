@@ -1,94 +1,83 @@
-# Détection de Personne, avec reconnaissance d’émotion dans un espace   
-Publique en explorant Google Cloud Vision API
-en english
+# 👁️‍🗨️ Person Detection with Emotion Recognition in Public Spaces Using Google Cloud Vision API 🌐
 
-## Overview
-This project leverages the Google Vision API and custom image processing algorithms to detect faces and emotions in images captured by a security camera. The system processes and analyzes the data to provide interpretable results, such as the count of unique individuals and their emotional states.
+## 📝 Overview
+This project utilizes the Google Vision API and advanced image processing algorithms to detect faces and analyze emotions in images captured by a security camera. The system processes data to provide actionable insights, such as the count of unique individuals and their emotional states. 
 
-![System Architecture](media/ConceptionArchitecture.png)
-
-## Our Solution
-Our solution involves:
-- Capturing images from a security camera.
-- Extracting frames to detect individuals and faces.
-- Analyzing faces for emotion detection and saving the data.
-- Counting unique individuals across frames to provide insights on activity and emotional states.
-
-![Solution Design](media/ConceptionSolution.png)
+![System Architecture](Media/ConceptionArchitecture.png)
 
 ---
 
-## Software Environment
+## 🚀 Our Solution
+### Key Steps:
+- 📸 **Image Capture**: A security camera captures real-time images.
+- 🖼️ **Frame Extraction**: Frames are extracted to detect individuals and faces.
+- 😃 **Emotion Analysis**: Faces are analyzed to detect emotions.
+- 🔢 **Unique Person Count**: The system calculates the number of distinct individuals across images.
 
-### Development Tools
-- **Anaconda**: Manages Python environments and simplifies package installation.
-- **Jupyter Notebook**: Facilitates interactive code development and documentation.
-
-### Technologies Used
-- **Python**: Main programming language for implementation.
-- **OpenCV (cv2)**: Processes images and handles computer vision operations.
-- **Ultralytics YOLO**: Performs real-time object detection.
-- **MTCNN**: Detects faces in images.
-- **FaceNetPyTorch**: Extracts facial features for identification.
-- **DeepFace**: Analyzes emotions and validates facial uniqueness.
-- **Google Vision API**: Handles object recognition, face detection, and OCR.
-- Other libraries like **numpy** and **shutil** for numerical operations and file handling.
+![Solution Design](Media/ConceptionSolution.png)
 
 ---
 
-## Development Details
+## 🛠️ Software Environment
 
-### System Integration
-During development, we integrated various components:
-1. Connected to a surveillance camera to capture real-time video streams.
-2. Extracted image frames and stored them for analysis.
-3. Used detection algorithms to identify individuals and analyze their emotions.
-4. Implemented a unique counter for tracking distinct individuals.
+### 🖥️ Development Tools
+- 🐍 **Anaconda**: For Python environment management and package installation.
+- 📓 **Jupyter Notebook**: Interactive code development and documentation.
 
-### Key Processes
-#### 1. Frame Extraction from Camera
-The script captures and crops images from a specified camera region of interest (ROI), ensuring valid and non-empty cropped images before saving them.
+### 🔧 Technologies Used
+- **Python**: Core language for project implementation.
+- 🖼️ **OpenCV (cv2)**: Handles image processing and computer vision tasks.
+- 🤖 **Ultralytics YOLO**: Enables real-time object detection.
+- 🙂 **MTCNN**: Detects faces in images.
+- 👤 **FaceNetPyTorch**: Extracts facial features for person identification.
+- 🧠 **DeepFace**: Analyzes facial emotions and ensures facial uniqueness.
+- 📋 **Google Vision API**: For object recognition, face detection, and OCR.
+- 🧮 Libraries like **numpy** and **shutil** for numerical operations and file management.
+
+---
+
+## 🔍 Development Details
+
+### 🔗 System Integration
+During development, the system was connected to a surveillance camera to:
+1. 🎥 Capture real-time video streams and extract frames.
+2. 🛠️ Detect individuals and analyze their emotions.
+3. 🧮 Count unique individuals across multiple frames.
+
+### 🧩 Key Processes
+#### 1️⃣ Frame Extraction from Camera
+Captures and crops images from the camera's region of interest (ROI), ensuring only valid and non-empty frames are saved.
 
 **File:** `extract.py`
 
-#### 2. Using Google Cloud Vision API
-Processes images to detect individuals and their emotions, saving results with filenames based on dominant emotions.
+#### 2️⃣ Using Google Cloud Vision API
+Processes images to detect people and their emotions, saving results with filenames indicating the dominant emotion.
 
 **File:** `GoocglecloudAPI.py`
 
-#### 3. Emotion Detection and Person Counting
+#### 3️⃣ Emotion Detection and Person Counting
 - **Face Detection and Emotion Analysis:** YOLO and MTCNN detect faces, while DeepFace analyzes emotions.
   - **File:** `FaceDetectionemotion.py`
-
-- **Unique Person Counting:** MTCNN and InceptionResnetV1 detect faces and generate embeddings for identifying unique individuals.
+- **Unique Person Counting:** MTCNN and InceptionResnetV1 identify unique individuals by comparing facial embeddings.
   - **File:** `estmatinguniquepeoplecount.py`
 
 ---
 
-## Testing and Validation
-Our solution demonstrated better performance than Google Vision API in specific tests, indicating robustness under various conditions.
+## 📊 Testing and Validation
+Our solution showed improved performance compared to the Google Vision API in specific tests, demonstrating robustness under various conditions.
 
-![Test Results](media/Tests.png)
-
----
-
-## File Structure
-- `media/ConceptionArchitecture.png`: System architecture diagram.
-- `media/ConceptionSolution.png`: Solution design illustration.
-- `media/Tests.png`: Test and validation results.
-- `extract.py`: Script for extracting frames from the camera.
-- `GoocglecloudAPI.py`: Script utilizing Google Cloud Vision API.
-- `FaceDetectionemotion.py`: Script for face detection and emotion analysis.
-- `estmatinguniquepeoplecount.py`: Script for counting unique individuals.
+![Test Results](Media/Tests.png)
 
 ---
 
-## Future Work
-- Optimize algorithms for faster processing.
-- Enhance detection accuracy under varying lighting and environmental conditions.
-- Integrate real-time monitoring and alert systems.
+## 📂 File Structure
+- 📁 **`Media/ConceptionArchitecture.png`**: System architecture diagram.
+- 📁 **`Media/ConceptionSolution.png`**: Solution design illustration.
+- 📁 **`Media/Tests.png`**: Test and validation results.
+- 📄 **`extract.py`**: Script for extracting frames from the camera.
+- 📄 **`GoocglecloudAPI.py`**: Script utilizing the Google Cloud Vision API.
+- 📄 **`FaceDetectionemotion.py`**: Script for face detection and emotion analysis.
+- 📄 **`estmatinguniquepeoplecount.py`**: Script for counting unique individuals.
 
 ---
 
-## Contact
-For further information, feel free to reach out to the project team.
